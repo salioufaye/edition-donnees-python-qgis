@@ -1,4 +1,4 @@
-//Supprimer des element
+#Supprimer des element
 projet = QgsProject.instance()
 coucheReg = projet.mapLayersByName("regio_s")[0]
 print(coucheReg)
@@ -8,9 +8,9 @@ if options & QgsVectorDataProvider.DeleteFeatures:
     sup = coucheReg.dataProvider().deleteFeatures([2,5])
     coucheReg.triggerRepaint()
     
-**********************************************************
+#**********************************************************
 
-*****************Ajouter des données:**************************
+#*****************Ajouter des données:**************************
 options= coucheReg.dataProvider().capabilities()
 if options & QgsVectorDataProvider.AddFeatures:
     entite = QgsFeature(coucheReg.fields())
@@ -21,8 +21,9 @@ if options & QgsVectorDataProvider.AddFeatures:
     print(res, ouFeats)
     coucheReg.triggerRepaint()
 
-******************************************************************************************************
+#******************************************************************************************************
 
 
     
+
 
