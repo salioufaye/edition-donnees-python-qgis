@@ -1,3 +1,4 @@
+//Supprimer des element
 projet = QgsProject.instance()
 coucheReg = projet.mapLayersByName("regio_s")[0]
 print(coucheReg)
@@ -8,4 +9,5 @@ if options & QgsVectorDataProvider.DeleteFeatures:
     coucheReg.triggerRepaint()
     
 **********************************************************
+
     
