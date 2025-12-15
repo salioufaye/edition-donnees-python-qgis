@@ -10,4 +10,19 @@ if options & QgsVectorDataProvider.DeleteFeatures:
     
 **********************************************************
 
+*****************Ajouter des données:**************************
+options= coucheReg.dataProvider().capabilities()
+if options & QgsVectorDataProvider.AddFeatures:
+    entite = QgsFeature(coucheReg.fields())
+    entite.stAttributes(["2", "Saguenay-Lac-Saint-Jean"])
+    # ajouter la geometriesChanged
+    (res, ouFeats) = entite.setGeometry(QgsGeometry.fromPointXY(QgsPointXY(coordX; coordY)))
+    coucheReg.dataProvider().addFeatures([entite])
+    print(res, ouFeats)
+    coucheReg.triggerRepaint()
+
+******************************************************************************************************
+
+
     
+
